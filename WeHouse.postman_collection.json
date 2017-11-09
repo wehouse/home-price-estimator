@@ -25,13 +25,13 @@
 							"raw": "{\n\"zipcode\": 98002,\n\"bedrooms\": 3,\n\"bathrooms\": 2.5,\n\"floors\": 2,\n\"sqft_above\": 2000,\n\"sqft_basement\": 800,\n\"year_built\": 2010,\n\"sqft_living\": 2100,\n\"sqft_lot\": 2600\n}"
 						},
 						"url": {
-							"raw": "localhost:8000/quote",
+							"raw": "localhost:8000/multiple-linear",
 							"host": [
 								"localhost"
 							],
 							"port": "8000",
 							"path": [
-								"quote"
+								"multiple-linear"
 							]
 						},
 						"description": ""
