@@ -28,5 +28,23 @@ accuracy. We will introduce other techniques of comparison.
 ### Multiple Linear Regression
 Adj R^2 value is 0.805
 
+## How to deploy and run?
+### From Code
+Install requirements from requirements.txt via 
+```
+pip install -r requirements.txt
+```
+Afterwards
+```
+gunicorn app:api
+```
+Port 8000 u will have it launched that will only address 127.0.0.1 requests and can be accessed using the postman collection in repo.
+
+### From Docker
+Docker image is provided via Quay, its launch instructions are here:
+[Container Registry](https://quay.io/repository/wehouse/house-price-estimator)
+
+postman collection in repo again will be the primary way to use it.
+
 ## References
 1. https://www.kaggle.com/harlfoxem/housesalesprediction/data
