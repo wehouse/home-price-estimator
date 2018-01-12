@@ -1,4 +1,4 @@
-class KingCountyLinearModel:      
+class KingCountyModels:      
     def create_regressor(self):    
         import numpy as np
         import matplotlib.pyplot as plt

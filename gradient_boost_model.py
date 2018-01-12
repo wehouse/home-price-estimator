@@ -27,21 +27,21 @@ X = onehotencoder.fit_transform(X).toarray()
 # Avoid dummy variable trap
 X = X[:,1:]
 
-
 # Model split into training and test
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
 
 # Fitting Multiple Linear Regression to the Training set
-from sklearn.linear_model import LinearRegression
-regressor = LinearRegression()
+from sklearn import ensemble
+regressor = ensemble.GradientBoostingRegressor(n_estimators = 400, max_depth = 5, min_samples_split = 2,
+          learning_rate = 0.1, loss = 'ls')
+
 regressor.fit(X_train, y_train)
 regressor.score(X_test, y_test)
 
 y_pred = regressor.predict(X_test)
 
-import statsmodels.formula.api as sm
-X_train = np.append(arr=np.ones((len(X_train),1)).astype(int),values=X_train,axis=1)
-X_opt = X_train[:,list(range(0,79))]
-regressor_OLS = sm.OLS(endog=y_train,exog=X_opt).fit()
-regressor_OLS.summary()
+import pickle
+
+pickle.dump( regressor, open( "gradient_boost_model.p", "wb" ) )
+pickle.dump(onehotencoder,open( "gradient_boost_model_onehotencoder.p", "wb" ) )

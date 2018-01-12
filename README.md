@@ -24,13 +24,17 @@ weaknesses which must be carefully evaluated.
 
 In order of implementation, we used the following models:
 1. Multiple Linear Regression
+2. Gradient Boosting Regression
 
 ## Results
 In order to compare results of multiple models, we will be using the Adjusted R^2 in order to evaluate test vs pred
 accuracy. We will introduce other techniques of comparison.
 
 ### Multiple Linear Regression
-Adj R^2 value is 0.805
+Adj R^2 value is 0.734
+
+### Gradient Boosting Regression
+Adj R^2 value is 0.827
 
 ## How to deploy and run?
 ### From Code
@@ -49,6 +53,9 @@ Docker image is provided via Quay, its launch instructions are here:
 [Container Registry](https://quay.io/repository/wehouse/house-price-estimator)
 
 postman collection in repo again will be the primary way to use it.
+
+### Version History
+0.0.1 Linear and Gradient Boosting Regression models
 
 ## References
 1. https://www.kaggle.com/harlfoxem/housesalesprediction/data
