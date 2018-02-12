@@ -6,7 +6,7 @@ from falcon_cors import CORS
 from multiple_linear_resource import MultipleLinearResource 
 
 
-public_cors = CORS(allow_all_origins=True)
+public_cors = CORS(allow_all_origins=True, allow_all_headers=True)
 
 
 api = falcon.API(middleware=[public_cors.middleware])
