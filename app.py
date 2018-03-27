@@ -4,6 +4,7 @@ import falcon
 from falcon_cors import CORS
 
 from multiple_linear_resource import MultipleLinearResource 
+from gradient_boosted_regression_resource
 
 public_cors = CORS(allow_all_origins=True, allow_all_methods=True, allow_all_headers=True, allow_headers_list=['Content-Type'])
 
