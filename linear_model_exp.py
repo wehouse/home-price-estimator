@@ -8,6 +8,7 @@ Created on Thu Nov  2 14:42:06 2017
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+import pickle
 
 dataset = pd.read_csv('kc_house_data.csv')
 current=0
@@ -43,3 +44,6 @@ X_train = np.append(arr=np.ones((len(X_train),1)).astype(int),values=X_train,axi
 X_opt = X_train[:,list(range(0,79))]
 regressor_OLS = sm.OLS(endog=y_train,exog=X_opt).fit()
 regressor_OLS.summary()
+
+pickle.dump( regressor, open( "linear_model.p", "wb" ) )
+pickle.dump( onehotencoder, open( "linear_model_onehotencoder.p", "wb" ) )
